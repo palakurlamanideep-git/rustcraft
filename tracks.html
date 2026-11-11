@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracks — RustCraft UI · Database · Cyber Security</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23a071ff'/><text y='72' x='50' text-anchor='middle' font-size='70'>⛏</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<script>/* no-flash theme: apply saved or system theme before first paint */
+try{var t=JSON.parse(localStorage.getItem("rustcraft_save_v1")||"{}").theme;
+if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tracks">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-cube">⛏</span>RUST<span class="b-green">CRAFT</span></a>
+    <nav class="hotbar">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="practice.html">Workshop</a>
+      <a href="tracks.html">Tracks</a>
+      <a href="playground.html">Playground</a>
+    </nav>
+    <div class="top-actions">
+      <div class="hud">
+        <div class="hud-lv" id="hud-lv">Lv.0 · Grass Block</div>
+        <div class="mcxp"><i id="hud-xpf"></i></div>
+      </div>
+      <button class="btn btn-icon" id="btn-sound" title="toggle sound">🔊</button>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+
+    <h1 style="margin-bottom:4px">🧭 SPECIALIZED TRACKS</h1>
+    <p class="mut">Where core Rust meets real product skills. Each track completes with projects; the Security track ends with a crackable Vault.</p>
+
+    <div class="tabs" style="margin-top:18px">
+      <button class="tab-btn" data-t="ui">🖥️ UI / Frontend</button>
+      <button class="tab-btn" data-t="db">🗄️ Database</button>
+      <button class="tab-btn" data-t="sec">🛡️ Cyber Security</button>
+    </div>
+
+    <div class="track-head">
+      <div class="ti" id="track-icon">🖥️</div>
+      <div style="flex:1">
+        <h2 id="track-name">—</h2>
+        <div class="mut" id="track-tag">—</div>
+        <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
+          <div class="xpbar" style="flex:1"><i id="track-fill" style="width:0%"></i></div>
+          <span class="tag" id="track-count">0/0 lessons</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="lesson-rail" id="track-rail"></div>
+    <div id="track-body"></div>
+
+    <!-- cybersecurity tools -->
+    <section id="sec-tools" style="display:none;margin-top:34px">
+      <h2 class="sec-title">🧰 VAULT TOOLS (runs 100% in your browser)</h2>
+      <div class="grid g2">
+        <div class="panel tool">
+          <h3>Base64</h3>
+          <textarea id="b64-in" placeholder="paste text or base64..."></textarea>
+          <div class="tool-row">
+            <button class="btn btn-small" id="b64-dec">DECODE ▶</button>
+            <button class="btn btn-small" id="b64-enc">◀ ENCODE</button>
+          </div>
+          <div class="out" id="b64-out">—</div>
+        </div>
+        <div class="panel tool">
+          <h3>Caesar shift</h3>
+          <textarea id="caesar-in" placeholder="cipher text (${printable letters})..."></textarea>
+          <div class="tool-row">
+            <span class="lbl">SHIFT</span>
+            <input type="range" id="caesar-shift" min="1" max="25" value="3">
+            <span class="lbl" id="caesar-shift-n">3</span>
+          </div>
+          <div class="out" id="caesar-out">—</div>
+        </div>
+        <div class="panel tool">
+          <h3>Hex ⇄ Text</h3>
+          <textarea id="hex-in" placeholder="6d 69 6e 65 ... or plain text"></textarea>
+          <div class="tool-row">
+            <button class="btn btn-small" id="hex-dec">HEX ▶ TEXT</button>
+            <button class="btn btn-small" id="hex-enc">◀ TEXT ▶ HEX</button>
+          </div>
+          <div class="out" id="hex-out">—</div>
+        </div>
+        <div class="panel tool">
+          <h3>Single-byte XOR brute</h3>
+          <textarea id="xor-in" placeholder="ciphertext bytes as text..."></textarea>
+          <div class="tool-row">
+            <button class="btn btn-small" id="xor-run">⛏ CRACK IT</button>
+          </div>
+          <div class="out" id="xor-out">—</div>
+        </div>
+      </div>
+
+      <h2 class="sec-title">🔓 THE CHALLENGES — unlock all three</h2>
+      <div id="challenge-zone"></div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>⛏ RUSTCRAFT — fan-made learning world. Not affiliated with Mojang/Microsoft or the Rust Foundation.</div>
+    <div class="flinks">
+      <a href="https://doc.rust-lang.org/book/" target="_blank">The Rust Book</a>
+      <a href="https://crates.io" target="_blank">crates.io</a>
+      <a href="https://tauri.app" target="_blank">Tauri</a>
+      <a href="https://github.com/launchbadge/sqlx" target="_blank">sqlx</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/tracks-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/tracks.js"></script>
+</body>
+</html>

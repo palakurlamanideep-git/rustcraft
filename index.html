@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RustCraft — Learn Rust, Minecraft-style</title>
+<meta name="description" content="A Minecraft-themed platform to learn Rust from basics to advanced: lessons, logic-building problems, UI, database and cyber security tracks.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237dbc2e'/><text y='72' x='50' text-anchor='middle' font-size='70'>⛏</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<script>/* no-flash theme: apply saved or system theme before first paint */
+try{var t=JSON.parse(localStorage.getItem("rustcraft_save_v1")||"{}").theme;
+if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-cube">⛏</span>RUST<span class="b-green">CRAFT</span></a>
+    <nav class="hotbar">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="practice.html">Workshop</a>
+      <a href="tracks.html">Tracks</a>
+      <a href="playground.html">Playground</a>
+    </nav>
+    <div class="top-actions">
+      <div class="hud">
+        <div class="hud-lv" id="hud-lv">Lv.0 · Grass Block</div>
+        <div class="mcxp"><i id="hud-xpf"></i></div>
+      </div>
+      <button class="btn btn-icon" id="btn-sound" title="toggle sound">🔊</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="sun"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="pixstars" aria-hidden="true">
+    <i style="top:8%;left:6%"></i><i style="top:16%;left:22%"></i><i style="top:6%;left:34%"></i>
+    <i style="top:22%;left:47%"></i><i style="top:10%;left:58%"></i><i style="top:30%;left:70%"></i>
+    <i style="top:5%;left:78%"></i><i style="top:18%;left:88%"></i><i style="top:38%;left:14%"></i>
+    <i style="top:32%;left:30%"></i><i style="top:42%;left:60%"></i><i style="top:26%;left:82%"></i>
+    <i style="top:12%;left:66%"></i><i style="top:34%;left:92%"></i>
+  </div>
+  <div class="wrap hero-inner">
+    <div>
+      <h1>MINE <span class="hc-gold">RUST</span>.<br>CRAFT <span class="hc-green">KNOWLEDGE</span>.</h1>
+      <p class="sub">43 core lessons across 8 worlds — from your first <code>fn main()</code> to borrow-checker boss fights.</p>
+      <div class="cta">
+        <a class="btn btn-grass" href="learn.html">⛏ START WORLD 1</a>
+        <a class="btn" href="practice.html">🛠 LOGIC PROBLEMS</a>
+        <a class="btn btn-purple" href="tracks.html">🧭 SPECIAL TRACKS</a>
+      </div>
+    </div>
+    <div class="hero-pick">⛏️</div>
+  </div>
+  <div class="grass-block-line"></div>
+  <div class="dirt-block-line"></div>
+</section>
+
+<main class="page">
+  <div class="wrap">
+
+    <h2 class="sec-title" style="margin-top:6px">🌱 THE EIGHT WORLDS — CORE CURRICULUM</h2>
+    <div class="grid g3" id="world-grid"></div>
+
+    <h2 class="sec-title">🧭 SPECIALIZED TRACKS</h2>
+    <div class="grid g3" id="track-grid"></div>
+
+    <h2 class="sec-title">⚒ MORE TOOLS</h2>
+    <section class="panel" style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+      <a href="playground.html" style="flex:1;min-width:180px"><b style="color:var(--gold)">🗺️ PLAYGROUND PORTAL</b><br><span class="mut">Draft Rust, run it in the official Playground.</span></a>
+      <a href="practice.html" style="flex:1;min-width:180px"><b style="color:var(--gold)">🛠️ THE WORKSHOP</b><br><span class="mut">Wood → Netherite tier problems with hints.</span></a>
+      <a href="tracks.html#sec" style="flex:1;min-width:180px"><b style="color:var(--gold)">🛡️ VAULT TOOLS</b><br><span class="mut">Crack the three vault locks in-browser.</span></a>
+    </section>
+    <p class="mut center" style="margin-top:18px;font-size:1.15rem">Tap the ⛏ player head (top bar) for your stats, advancements and route. Progress auto-saves in your browser.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>⛏ RUSTCRAFT — a fan-made learning world. Progress lives in YOUR browser (localStorage). Not affiliated with Mojang/Microsoft or the Rust Foundation.</div>
+    <div class="flinks">
+      <a href="https://doc.rust-lang.org/book/" target="_blank">The Rust Book</a>
+      <a href="https://play.rust-lang.org" target="_blank">Rust Playground</a>
+      <a href="https://doc.rust-lang.org/rust-by-example/" target="_blank">Rust by Example</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/tracks-data.js"></script>
+<script src="js/problems.js"></script>
+<script src="js/main.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

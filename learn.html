@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Learn — RustCraft Core Worlds</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%237dbc2e'/><text y='72' x='50' text-anchor='middle' font-size='70'>⛏</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<script>/* no-flash theme: apply saved or system theme before first paint */
+try{var t=JSON.parse(localStorage.getItem("rustcraft_save_v1")||"{}").theme;
+if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="learn">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-cube">⛏</span>RUST<span class="b-green">CRAFT</span></a>
+    <nav class="hotbar">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="practice.html">Workshop</a>
+      <a href="tracks.html">Tracks</a>
+      <a href="playground.html">Playground</a>
+    </nav>
+    <div class="top-actions">
+      <div class="hud">
+        <div class="hud-lv" id="hud-lv">Lv.0 · Grass Block</div>
+        <div class="mcxp"><i id="hud-xpf"></i></div>
+      </div>
+      <button class="btn btn-icon" id="btn-sound" title="toggle sound">🔊</button>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+    <div class="layout">
+
+      <aside class="sidebar panel"></aside>
+
+      <section>
+        <div class="panel" id="continue-card" style="margin-bottom:18px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+          <div style="font-size:2.2rem">🧭</div>
+          <div style="flex:1">
+            <h3 style="color:var(--gold)">EXPEDITION LOG</h3>
+            <div id="continue-text" class="mut">Loading your journey...</div>
+          </div>
+          <button class="btn btn-grass" id="continue-btn">CONTINUE ▶</button>
+        </div>
+
+        <div class="mut" style="margin-bottom:10px">
+          <span id="total-lessons">—</span> lessons across 8 worlds · click a world to unfold it · every lesson = 25 XP
+        </div>
+
+        <div id="lesson-mount"></div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>⛏ RUSTCRAFT — fan-made learning world. Not affiliated with Mojang/Microsoft or the Rust Foundation.</div>
+    <div class="flinks">
+      <a href="https://doc.rust-lang.org/book/" target="_blank">The Rust Book</a>
+      <a href="https://play.rust-lang.org" target="_blank">Rust Playground</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/learn.js"></script>
+</body>
+</html>

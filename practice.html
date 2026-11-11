@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop — RustCraft Logic Problems</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23d9a23a'/><text y='72' x='50' text-anchor='middle' font-size='70'>⛏</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<script>/* no-flash theme: apply saved or system theme before first paint */
+try{var t=JSON.parse(localStorage.getItem("rustcraft_save_v1")||"{}").theme;
+if(t!=="light"&&t!=="dark")t=window.matchMedia&&matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";
+document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="practice">
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="brand-cube">⛏</span>RUST<span class="b-green">CRAFT</span></a>
+    <nav class="hotbar">
+      <a href="index.html">Home</a>
+      <a href="learn.html">Learn</a>
+      <a href="practice.html">Workshop</a>
+      <a href="tracks.html">Tracks</a>
+      <a href="playground.html">Playground</a>
+    </nav>
+    <div class="top-actions">
+      <div class="hud">
+        <div class="hud-lv" id="hud-lv">Lv.0 · Grass Block</div>
+        <div class="mcxp"><i id="hud-xpf"></i></div>
+      </div>
+      <button class="btn btn-icon" id="btn-sound" title="toggle sound">🔊</button>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <div class="wrap">
+
+    <h1 style="margin-bottom:6px">🛠 THE WORKSHOP</h1>
+    <p class="mut" style="max-width:760px">Logic-smithing with Rust. Every chest is a self-contained problem: read the brief, write your version, verify it in the Playground, then plant your flag here.
+      <span id="tier-xp-note" class="mut"></span></p>
+
+    <div class="filters">
+      <select id="f-tier">
+        <option value="all">all tiers</option>
+        <option value="wood">Wood tier</option>
+        <option value="stone">Stone tier</option>
+        <option value="iron">Iron tier</option>
+        <option value="gold">Gold tier</option>
+        <option value="diamond">Diamond tier</option>
+        <option value="netherite">Netherite tier</option>
+      </select>
+      <select id="f-status">
+        <option value="all">any status</option>
+        <option value="todo">unsolved</option>
+        <option value="solved">solved</option>
+      </select>
+      <input type="text" id="f-search" placeholder="🔍 search title/tags...">
+      <span class="tag">shown: <b id="shown-count">0/0</b></span>
+      <span class="tag">solved: <b id="solved-count">0/0</b></span>
+    </div>
+
+    <div class="inv-grid" id="prob-grid"></div>
+
+  </div>
+</main>
+
+<!-- problem modal -->
+<div class="modal-bg" id="prob-modal">
+  <div class="modal">
+    <div class="modal-head"></div>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>⛏ RUSTCRAFT — fan-made learning world. Not affiliated with Mojang/Microsoft or the Rust Foundation.</div>
+    <div class="flinks">
+      <a href="https://play.rust-lang.org" target="_blank">Rust Playground</a>
+      <a href="https://doc.rust-lang.org/std/" target="_blank">std docs</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/problems.js"></script>
+<script src="js/main.js"></script>
+<script src="js/practice.js"></script>
+</body>
+</html>
